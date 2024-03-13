@@ -1,0 +1,209 @@
+@font-face {
+  font-family: 'Serifebabe';
+  src: url('Serifbabe\ Alpha\ Regular.ttf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Panels. */
+.splitview {
+  position: relative;
+  width: 100%;
+  min-height: 45vw;
+  overflow: hidden;
+}
+
+.panel {
+  position: absolute;
+  width: 100vw;
+  height: 45vw;
+  overflow: hidden;
+}
+
+.skewed{
+  height: 100vh;
+}
+  .panel .content {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      color: #00F;
+  }
+
+  .panel .description {
+      width: 50%;
+      position: absolute;
+      top: 60%; 
+      margin-left: 5vw;
+      font-family: "Space Grotesk", sans-serif;
+      text-shadow: 0 0 4px blue;
+      transform: translateY(-50%);
+
+      
+  }
+
+  #jj{
+    top:55.5vh;
+    left: 20vw;
+  }
+
+  p{
+    font-size: 1vw;
+  }
+
+  h1{
+    font-family:'Serifebabe';
+    text-transform: uppercase;
+    transform: rotate(90deg);
+  }
+
+#hh{
+  margin-top: 70%;
+  margin-left: -35vw;
+}
+
+#hh1{
+  margin-top: 45%;
+  margin-left: 29vw;
+  max-width: 17vw;
+}
+
+
+.bottom {
+  background: linear-gradient(180deg, #0000FC 0%, #9D9DFF 53.06%, #FFF 100%);
+  z-index: 1;
+  height: 100vh;
+}
+
+  .bottom .description {
+      right: 5%;
+  }
+
+.top {
+  background: linear-gradient(128deg, #000 71.22%, #00009D 97.27%);
+  z-index: 2;
+  width: 50vw;
+  height: 100vh;
+
+  /*-webkit-clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);*/
+}
+
+  .top .description {
+      left: 5%;
+  }
+
+/* Handle. */
+.handle {
+  height: 100%;
+  position: absolute;
+  display: block;
+  background-color: #00003A;
+  width: 5px;
+  top: 0;
+  left: 50%;
+  z-index: 3;
+}
+
+/* Skewed. */
+.skewed .handle {
+  top: 50%;
+  transform: rotate(30deg) translateY(-50%);
+  height: 200%;
+  -webkit-transform-origin: top;
+  -moz-transform-origin: top;
+  transform-origin: top;
+}
+
+.skewed .top {
+  transform: skew(-30deg);
+  margin-left: -1000px;
+  width: calc(50vw + 1000px);
+}
+
+.skewed .top .content {
+  transform: skew(30deg);
+  margin-left: 1000px;
+}
+
+/* Responsive. */
+@media (max-width: 900px) {
+  body {
+      font-size: 75%;
+
+  }
+
+}
+
+
+
+.container {
+  margin-left: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40vh;
+}
+
+.container .box {
+  transform-style: preserve-3d;
+  animation: animate 25s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+      transform: perspective(2000px) rotateX(0deg) rotate(25deg);
+  }
+
+  100% {
+      transform: perspective(2000px) rotateX(360deg) rotate(25deg);
+  }
+}
+
+.container .box span {
+  position: absolute;
+  padding: 0 10px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.5), transparent);
+  white-space: nowrap;
+  font-family: "Space Grotesk", sans-serif;
+  color: #FFF;
+  font-size: clamp(1.5rem, 4vw + 1rem, 3.5rem);
+  font-weight: 900;
+  line-height: 0.76em;
+  text-transform: uppercase;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%)rotateX(calc(var(--i) * 22.5deg)) translateZ(106px);
+  user-select: none;
+}
+
+.container .box span i:nth-child(1) {
+  font-style: initial;
+  color: #9D9DFF;
+}
+
+.container .box span i:nth-child(2) {
+  font-style: initial;
+  color: #0000FC;
+
+}
+
+
+
+
+
+
+
